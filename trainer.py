@@ -245,7 +245,7 @@ def train(train_loader, model, criterion, optimizer, optimizer_mask, epoch,model
 
         output = model(input_var)
         k1=0.00000002
-        k2=0.1
+        k2=0.5
         #第一项太简单了，k2要相对小
         # loss = criterion(output, target_var) * k1
         loss =  criterion(output, target_var) * k1 +k2*subtract(model1,model)
